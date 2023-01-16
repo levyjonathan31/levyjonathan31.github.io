@@ -285,6 +285,9 @@ input {
     margin: 4px 2px;
     cursor: pointer;
     }
+ button:hover{
+    background-color: #66FCF1;
+ }
 @media screen and (min-width: 1500px) {
   
     .h2-center{
