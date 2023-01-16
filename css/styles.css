@@ -86,7 +86,7 @@ header {
 nav {
     justify-content: space-evenly;
     display: flex;
-    font-size: 4em; 
+    font-size: 3.25em; 
 }
 nav a{
     text-decoration: none;
