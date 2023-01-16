@@ -212,7 +212,7 @@ ul {
     background-color: #1F2833;
     color: #c5c6c7;
 }
-ul a {
+ul a:link, ul a:visited  {
     text-decoration: none;
     color: #c5c6c7;
 }
