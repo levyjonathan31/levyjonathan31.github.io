@@ -86,7 +86,7 @@ header {
 nav {
     justify-content: space-evenly;
     display: flex;
-    font-size: 2em; 
+    font-size: 2.5em; 
 }
 nav a{
     text-decoration: none;
@@ -180,7 +180,7 @@ header p {
 
 .project-item p {
     text-align: left;
-    font-size: 1.75em;
+    font-size: 1.5em;
     margin: 20px;
 }
 
@@ -229,7 +229,11 @@ li a {
     .h2-center{
         font-size: 1.65em;
     }
-
+    nav {
+        justify-content: space-evenly;
+        display: flex;
+        font-size: 2em; 
+    }
     .education-grid{
         background-color: #DFDCE3;
         display: grid;
