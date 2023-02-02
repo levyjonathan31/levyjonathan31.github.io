@@ -9,7 +9,7 @@ body {
 h1 {
     font-family: 'Nevis', sans-serif;
     font-style: italic;
-    font-size: 4em;
+    font-size: 2em;
     margin: 0;
     padding: 20px;
     text-align: center;
@@ -20,7 +20,7 @@ h2 {
 }
 .h2-left {
     text-align: left;
-    font-size: 2.5em;
+    font-size: 2em;
     margin: 0;
     padding: 10px;
     font-style: italic;
@@ -29,20 +29,20 @@ h2 {
 .h2-center
 {
     text-align: center;
-    font-size: 2.5em;
+    font-size: 1.25em;
     margin: 0;
     padding: 10px
 }
 .h3-left{
     text-align: left;
-    font-size: 2em;
+    font-size: 1.75em;
     margin: 0;
     padding: 10px
 }
 
 .h3-center{
     text-align: center;
-    font-size: 2em;
+    font-size: 1.75em;
     margin: 0;
     padding: 10px
 }
@@ -132,9 +132,6 @@ nav a img
     border-radius: 100px;
     margin: 0 10px;
 }
-.about-info p {
-    font-size: 1.25em;
-}
 
 .about-me section {
     width : auto;
@@ -142,7 +139,7 @@ nav a img
     background-color: #0B0C10;
     color :#c5c6c7 ;
     text-align: left;
-    font-size: 1.5em;
+    font-size: 1.25em;
     padding: 40px;
     margin: 20px;       
 }
@@ -150,6 +147,7 @@ nav a img
 
 .work-grid {
     background-color: #0B0C10;
+    font-size: 1.25em;
 }
 .work-grid > .work-item, .work-grid > .work-title {
     color :#c5c6c7;
@@ -158,13 +156,13 @@ nav a img
     text-align: left;
 }
 .work-grid p {
-    font-size: 1.5em;
     margin: 10px;
 }
 
 
 .education-grid{
     background-color: #0B0C10;
+    font-size: 1.25em;
 }
 .education-grid > .education-item, .education-grid > .education-title {
     color :#c5c6c7;
@@ -173,7 +171,6 @@ nav a img
     text-align: left;
 }
 .education-grid p {
-    font-size: 1.5em;
     padding: 10px;
     margin: 0px;
 }
@@ -196,7 +193,7 @@ header p {
 
 .project-item p {
     text-align: left;
-    font-size: 1.5em;
+    font-size: 1em;
     margin: 20px;
 }
 
@@ -209,7 +206,7 @@ header p {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 30px;
+    font-size: 1em;
     margin: 4px 2px;
     cursor: pointer;
   }
@@ -246,7 +243,7 @@ li a {
     display: block;
     text-align: center;
     text-decoration: none;
-    font-size: 1.75em;
+    font-size: 1.5em;
 }
 
 form {
@@ -351,10 +348,14 @@ input {
     border:0;
     padding:0;
 }
-@media screen and (min-width: 1500px) {
+/* Media query represents the Desktop version */
+@media screen and (min-width: 1200px) {
   
+    h1{
+        font-size: 3.75em;
+    }
     .h2-center{
-        font-size: 1.65em;
+        font-size: 2em;
     }
     .education-grid{
         background-color: #0B0C10;
@@ -370,6 +371,7 @@ input {
         -webkit-box-align: center;
             -ms-flex-align: center;
                 align-items: center;
+        font-size: 1.75em;
     }
     .education-grid > *:nth-child(1){
         -ms-grid-row: 1;
@@ -384,9 +386,7 @@ input {
         grid-column: 2;
     }
     .work-grid {
-
         display: -ms-grid;
-
         display: grid;
         -ms-grid-columns: 1fr 2fr;
         grid-template-columns: 1fr 2fr;
@@ -398,6 +398,7 @@ input {
         -webkit-box-align: center;
             -ms-flex-align: center;
                 align-items: center;
+                font-size: 1.75em;
     }
     .work-grid > *:nth-child(1) {
         -ms-grid-row: 1;
@@ -422,12 +423,12 @@ input {
         -webkit-box-align: center;
             -ms-flex-align: center;
                 align-items: center;
+        font-size: 1.35em;
     }
 
     .about-me section {
         width: 60%;
         margin: 0 5%;
-
         color :#c5c6c7 ;
         border-radius: 100px;
         text-align: left;
@@ -485,7 +486,7 @@ input {
 
     .project-item p {
         text-align: left;
-        font-size: 1.3em;
+        font-size: 1em;
         margin: 5%;
     }
 
@@ -515,7 +516,7 @@ input {
         text-decoration: none;
      
     }
-    nav
+    nav 
     {
         font-size: 3em;
     }
