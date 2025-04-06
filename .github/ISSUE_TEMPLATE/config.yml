@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Issue Template
+    url: /issues/new?template=issue-template.md
+    about: "Use this template for structured issue reporting, like Jira."
