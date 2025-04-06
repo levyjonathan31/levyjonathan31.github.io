@@ -6,12 +6,6 @@ labels: ''
 assignees: ''
 
 ---
-
-### **Summary**
-- _Provide a brief description of the issue or task here._
-
----
-
 ### **Description**
 - _A detailed explanation of the issue or task._
 
