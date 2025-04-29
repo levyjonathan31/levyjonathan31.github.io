@@ -1,0 +1,63 @@
+.card-container {
+    display: flex;
+    height: 100%;
+    /* Ensure the container takes up the full height */
+    gap: 16px;
+    /* Space between columns */
+    margin: 15px;
+}
+
+.left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    /* Space between stacked cards */
+    flex: 1;
+    /* Take up 50% of the width */
+}
+
+.left-column .card-top {
+    flex: 2;
+    /* Top card takes 66% of the height */
+}
+
+.left-column .card-bottom {
+    flex: 1;
+    /* Bottom card takes 34% of the height */
+}
+
+.right-column {
+    flex: 1;
+    /* Take up 50% of the width */
+    display: flex;
+}
+
+.right-column .card {
+    flex: 1;
+    /* Make the card take up the full height of the column */
+}
+
+.card-bottom h3 {
+    text-align: center;
+    margin: 4px;
+}
+
+.comment-box {
+    width: 95%;
+    height: 100%;
+    /* Set a fixed height for the textarea */
+    margin: 8px auto 16px auto;
+    /* Add margin-top: 8px, margin-bottom: 16px */
+    border: 1px solid #ccc;
+    /* Add a border */
+    border-radius: 4px;
+    /* Slightly rounded corners */
+    resize: none;
+    /* Disable resizing */
+    font-size: 14px;
+    /* Adjust font size */
+    box-sizing: border-box;
+    /* Include padding and border in the element's total width/height */
+    padding: 8px;
+    /* Add padding inside the textarea */
+}

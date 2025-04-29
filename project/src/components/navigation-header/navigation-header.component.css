@@ -1,0 +1,24 @@
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search-bar {
+    flex: 1;
+    margin: 0 15px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+}
+
+.search-bar mat-form-field {
+    width: 100%;
+}
+
+.nav-bar {
+    padding: 10px;
+}
+
+.icon-display {
+    transform: scale(1.5);
+}
