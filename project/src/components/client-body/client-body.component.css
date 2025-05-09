@@ -37,7 +37,7 @@
     /* Make the card take up the full height of the column */
 }
 
-.card-bottom h3 {
+h3 {
     text-align: center;
     margin: 4px;
 }
@@ -60,4 +60,61 @@
     /* Include padding and border in the element's total width/height */
     padding: 8px;
     /* Add padding inside the textarea */
+}
+
+.form-grid {
+    margin: 16px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 columns of equal width */
+    gap: 16px;
+    /* Space between fields */
+}
+
+mat-form-field {
+    font-size: 16px;
+    height: 48px;
+}
+
+mat-list {
+    width: 100%;
+    /* Ensure the list takes up the full width of the card */
+}
+
+mat-list-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* Light gray background for the list item */
+
+    /* Add spacing between the icon and text */
+}
+
+
+.done {
+    background-color: rgba(124, 252, 0, 0.5);
+}
+
+.in-progress {
+    background-color: rgba(255, 255, 0, 0.5);
+}
+
+.needs-review {
+    background-color: rgba(240, 128, 128, 0.5);
+}
+
+mat-list-item span {
+    position: relative;
+    /* Allows you to adjust the position */
+    top: -4px;
+    left: 8px;
+    /* Move the text up by 4px (adjust as needed) */
+    font-size: 16px;
+    /* Optional: Adjust font size */
+}
+
+mat-icon[matListIcon] {
+    color: #ffcc00;
+    scale: 1.5;
+    /* Optional: Add a folder-like color */
 }

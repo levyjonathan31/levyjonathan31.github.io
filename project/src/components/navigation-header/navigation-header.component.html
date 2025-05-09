@@ -2,9 +2,16 @@
     <button mat-icon-button class="icon-display">
         <mat-icon>home</mat-icon>
     </button>
-    <mat-form-field appearance="fill" class="search-bar middle">
+    <mat-form-field appearance="fill" class="search-bar middle" subscriptSizing="dynamic">
         <mat-icon matPrefix>search</mat-icon>
-        <input matInput placeholder="Search" />
+        <input type="text" placeholder="Search" aria-label="Search" matInput [formControl]="searchControl"
+            [matAutocomplete]="auto">
+
+        <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let client of filteredOptions | async" [value]="client">
+                {{ client }}
+            </mat-option>
+        </mat-autocomplete>
     </mat-form-field>
     <button mat-icon-button class="icon-display">
         <mat-icon>logout</mat-icon>
