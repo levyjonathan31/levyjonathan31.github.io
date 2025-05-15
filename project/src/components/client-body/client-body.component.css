@@ -7,7 +7,7 @@
     margin: 15px;
 }
 
-.left-column {
+.column {
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -16,28 +16,23 @@
     /* Take up 50% of the width */
 }
 
-.left-column .card-top {
+.column .card-top {
     flex: 2;
     /* Top card takes 66% of the height */
 }
 
-.left-column .card-bottom {
+.column .card-bottom {
     flex: 1;
     /* Bottom card takes 34% of the height */
 }
 
-.right-column {
-    flex: 1;
-    /* Take up 50% of the width */
-    display: flex;
+.column .card {
+    margin: 0 2%;
 }
 
-.right-column .card {
-    flex: 1;
-    /* Make the card take up the full height of the column */
-}
 
-h3 {
+
+h2 {
     text-align: center;
     margin: 4px;
 }
@@ -45,30 +40,34 @@ h3 {
 .comment-box {
     width: 95%;
     height: 100%;
-    /* Set a fixed height for the textarea */
     margin: 8px auto 16px auto;
-    /* Add margin-top: 8px, margin-bottom: 16px */
     border: 1px solid #ccc;
-    /* Add a border */
     border-radius: 4px;
-    /* Slightly rounded corners */
     resize: none;
-    /* Disable resizing */
     font-size: 14px;
-    /* Adjust font size */
     box-sizing: border-box;
-    /* Include padding and border in the element's total width/height */
     padding: 8px;
-    /* Add padding inside the textarea */
 }
 
 .form-grid {
-    margin: 16px;
+    margin: 8px 16px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    /* 2 columns of equal width */
     gap: 16px;
-    /* Space between fields */
+
+}
+
+.folder-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin: 0 16px;
+}
+
+mat-card {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 mat-form-field {
@@ -76,18 +75,15 @@ mat-form-field {
     height: 48px;
 }
 
-mat-list {
-    width: 100%;
-    /* Ensure the list takes up the full width of the card */
-}
+
 
 mat-list-item {
     display: flex;
     align-items: center;
     gap: 8px;
-    /* Light gray background for the list item */
+    padding: 12px 12px;
+    display: inline-block;
 
-    /* Add spacing between the icon and text */
 }
 
 
@@ -105,16 +101,12 @@ mat-list-item {
 
 mat-list-item span {
     position: relative;
-    /* Allows you to adjust the position */
     top: -4px;
-    left: 8px;
-    /* Move the text up by 4px (adjust as needed) */
+    left: 16px;
     font-size: 16px;
-    /* Optional: Adjust font size */
 }
 
 mat-icon[matListIcon] {
     color: #ffcc00;
     scale: 1.5;
-    /* Optional: Add a folder-like color */
 }
