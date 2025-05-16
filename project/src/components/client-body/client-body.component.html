@@ -1,146 +1,60 @@
 <div class="card-container">
     <div class="column">
         <mat-card class="card-top">
-            <h2>Client</h2>
+            <h3>Client</h3>
             <form class="form-grid">
-                <mat-form-field appearance="fill" subscriptSizing="dynamic">
-                    <mat-label>Contact 1</mat-label>
-                    <input matInput placeholder="Enter value">
-                </mat-form-field>
-                <mat-form-field appearance="fill" subscriptSizing="dynamic">
-                    <mat-label>Contact 2</mat-label>
-                    <input matInput placeholder="Enter value">
-                </mat-form-field>
-                <mat-form-field appearance="fill" subscriptSizing="dynamic">
-                    <mat-label>Phone Number</mat-label>
-                    <input matInput placeholder="Enter value">
-                </mat-form-field>
-                <mat-form-field appearance="fill" subscriptSizing="dynamic">
-                    <mat-label>Phone Number 2</mat-label>
-                    <input matInput placeholder="Enter value">
-                </mat-form-field>
-                <mat-form-field appearance="fill" subscriptSizing="dynamic">
-                    <mat-label>Address</mat-label>
-                    <input matInput placeholder="Enter value">
-                </mat-form-field>
-                <mat-form-field appearance="fill" subscriptSizing="dynamic">
-                    <mat-label>State</mat-label>
-                    <input matInput placeholder="Enter value">
-                </mat-form-field>
-                <mat-form-field appearance="fill" subscriptSizing="dynamic">
-                    <mat-label>Zip</mat-label>
-                    <input matInput placeholder="Enter value">
-                </mat-form-field>
-                <mat-form-field appearance="fill" subscriptSizing="dynamic">
-                    <mat-label>Country</mat-label>
-                    <input matInput placeholder="Enter value">
-                </mat-form-field>
-                <mat-form-field appearance="fill" subscriptSizing="dynamic">
-                    <mat-label>Field 9</mat-label>
-                    <input matInput placeholder="Enter value">
-                </mat-form-field>
-                <mat-form-field appearance="fill" subscriptSizing="dynamic">
-                    <mat-label>Field 10</mat-label>
-                    <input matInput placeholder="Enter value">
-                </mat-form-field>
-
-
+                <ng-container *ngFor="let field of fields">
+                    <mat-form-field appearance="fill" subscriptSizing="dynamic">
+                        <mat-label>{{ field.label }}</mat-label>
+                        <input *ngIf="field.type === 'text' || field.type === 'email'" matInput [type]="field.type">
+                        <mat-select *ngIf="field.type === 'select'" [placeholder]="field.label">
+                            <ng-container *ngFor="let option of field.options">
+                                <mat-option [value]="option.value !== undefined ? option.value : option">
+                                    {{ option.label !== undefined ? option.label : option }}
+                                </mat-option>
+                            </ng-container>
+                        </mat-select>
+                    </mat-form-field>
+                </ng-container>
             </form>
         </mat-card>
         <mat-card class="card-bottom">
-            <h2>Comments</h2>
-            <textarea class="comment-box" placeholder="Enter your comments here"></textarea>
+            <h3>Comments</h3>
+            <mat-form-field appearance="fill">
+                <mat-label>Add any relevant notes about this client</mat-label>
+                <textarea matInput></textarea>
+            </mat-form-field>
         </mat-card>
     </div>
     <div class="column">
         <mat-card class="card-top">
-            <h2>File Explorer</h2>
+            <h3>File Explorer</h3>
             <mat-list class="folder-grid">
-                <mat-list-item class="done">
+                <mat-list-item *ngFor="let folder of folders" class="folder" [ngClass]="folder.status">
                     <mat-icon matListIcon>folder</mat-icon>
-                    <span>Folder 1</span>
-                </mat-list-item>
-                <mat-list-item class="in-progress">
-                    <mat-icon matListIcon>folder</mat-icon>
-                    <span>Folder 2</span>
-                </mat-list-item>
-                <mat-list-item class="needs-review">
-                    <mat-icon matListIcon>folder</mat-icon>
-                    <span>Folder 3</span>
-                </mat-list-item>
-                <mat-list-item class="done">
-                    <mat-icon matListIcon>folder</mat-icon>
-                    <span>Folder 4</span>
-                </mat-list-item>
-                <mat-list-item class="in-progress">
-                    <mat-icon matListIcon>folder</mat-icon>
-                    <span>Folder 5</span>
-                </mat-list-item>
-                <mat-list-item class="needs-review">
-                    <mat-icon matListIcon>folder</mat-icon>
-                    <span>Folder 6</span>
-                </mat-list-item>
-                <mat-list-item class="done">
-                    <mat-icon matListIcon>folder</mat-icon>
-                    <span>Folder 7</span>
-                </mat-list-item>
-                <mat-list-item class="in-progress">
-                    <mat-icon matListIcon>folder</mat-icon>
-                    <span>Folder 8</span>
-                </mat-list-item>
-                <mat-list-item class="needs-review">
-                    <mat-icon matListIcon>folder</mat-icon>
-                    <span>Folder 9</span>
-                </mat-list-item>
-                <mat-list-item class="done">
-                    <mat-icon matListIcon>folder</mat-icon>
-                    <span>Folder 10</span>
-                </mat-list-item>
-                <mat-list-item class="in-progress">
-                    <mat-icon matListIcon>folder</mat-icon>
-                    <span>Folder 11</span>
-                </mat-list-item>
-                <mat-list-item class="needs-review">
-                    <mat-icon matListIcon>folder</mat-icon>
-                    <span>Folder 12</span>
-                </mat-list-item>
-                <mat-list-item class="done">
-                    <mat-icon matListIcon>folder</mat-icon>
-                    <span>Folder 13</span>
-                </mat-list-item>
-                <mat-list-item class="in-progress">
-                    <mat-icon matListIcon>folder</mat-icon>
-                    <span>Folder 14</span>
-                </mat-list-item>
-                <mat-list-item class="needs-review">
-                    <mat-icon matListIcon>folder</mat-icon>
-                    <span>Folder 15</span>
-                </mat-list-item>
-                <mat-list-item class="done">
-                    <mat-icon matListIcon>folder</mat-icon>
-                    <span>Folder 16</span>
-                </mat-list-item>
-                <mat-list-item class="in-progress">
-                    <mat-icon matListIcon>folder</mat-icon>
-                    <span>Folder 17</span>
-                </mat-list-item>
-                <mat-list-item class="needs-review">
-                    <mat-icon matListIcon>folder</mat-icon>
-                    <span>Folder 18</span>
-                </mat-list-item>
-                <mat-list-item class="done">
-                    <mat-icon matListIcon>folder</mat-icon>
-                    <span>Folder 19</span>
-                </mat-list-item>
-                <mat-list-item class="in-progress">
-                    <mat-icon matListIcon>folder</mat-icon>
-                    <span>Folder 20</span>
+                    <span>{{ folder.title }}</span>
+                    <div class="folder-overlay">
+                        <button mat-icon-button color="primary" aria-label="Upload">
+                            <mat-icon>upload</mat-icon>
+                        </button>
+                        <button mat-icon-button color="accent" aria-label="View">
+                            <mat-icon>visibility</mat-icon>
+                        </button>
+                    </div>
                 </mat-list-item>
             </mat-list>
         </mat-card>
         <mat-card class="card-bottom">
-            <h2>Checklist</h2>
-            <textarea class="comment-box" placeholder="Enter your comments here"></textarea>
+            <h3>Checklist</h3>
+            <div class="checklist-scroll">
+                <mat-selection-list>
+                    <mat-list-option *ngFor="let task of checklist; let i = index" [(selected)]="task.completed"
+                        color="primary">
+                        <span *ngIf="task.sequence !== undefined" class="task-sequence">{{ task.sequence }}.</span>
+                        {{ task.label }}
+                    </mat-list-option>
+                </mat-selection-list>
+            </div>
         </mat-card>
     </div>
 </div>
