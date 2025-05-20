@@ -8,6 +8,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { TextFieldModule } from '@angular/cdk/text-field';
+import { MatMenuModule } from '@angular/material/menu';
 
 @Component({
   selector: 'app-client-body',
@@ -20,7 +21,8 @@ import { TextFieldModule } from '@angular/cdk/text-field';
     MatListModule,
     MatSelectModule,
     MatOptionModule,
-    TextFieldModule
+    TextFieldModule,
+    MatMenuModule,
   ],
   templateUrl: './client-body.component.html',
   styleUrl: './client-body.component.css'
@@ -90,26 +92,26 @@ export class ClientBodyComponent {
   ];
 
   folders = [
-    { title: 'Folder 1', status: 'done' },
-    { title: 'Folder 2', status: 'in-progress' },
-    { title: 'Folder 3', status: 'needs-review' },
-    { title: 'Folder 4', status: 'done' },
-    { title: 'Folder 5', status: 'in-progress' },
-    { title: 'Folder 6', status: 'needs-review' },
-    { title: 'Folder 7', status: 'done' },
-    { title: 'Folder 8', status: 'in-progress' },
-    { title: 'Folder 9', status: 'needs-review' },
-    { title: 'Folder 10', status: 'done' },
-    { title: 'Folder 11', status: 'in-progress' },
-    { title: 'Folder 12', status: 'needs-review' },
-    { title: 'Folder 13', status: 'done' },
-    { title: 'Folder 14', status: 'in-progress' },
-    { title: 'Folder 15', status: 'needs-review' },
-    { title: 'Folder 16', status: 'done' },
-    { title: 'Folder 17', status: 'in-progress' },
-    { title: 'Folder 18', status: 'needs-review' },
-    { title: 'Folder 19', status: 'done' },
-    { title: 'Folder 20', status: 'in-progress' },
+    { title: "Buyers Agreement", status: 'done' },
+    { title: "Brokers Compensation Agreement", status: 'in-progress' },
+    { title: "Sellers Listing Agreement", status: 'needs-review' },
+    { title: "Sellers Listing Modification", status: 'done' },
+    { title: "Buyers Contract", status: 'in-progress' },
+    { title: "Buyers Addendums", status: 'needs-review' },
+    { title: "Buyers Escrow Deposit Verification", status: 'done' },
+    { title: "Sellers Disclosure", status: 'in-progress' },
+    { title: "Sellers Lead-Based Paint Disclosure", status: 'needs-review' },
+    { title: "HOAs Rider", status: 'done' },
+    { title: "Associations HOPA Disclosure", status: 'in-progress' },
+    { title: "Associations Approval", status: 'needs-review' },
+    { title: "Buyers Legal Docs", status: 'done' },
+    { title: "Titles Documents", status: 'in-progress' },
+    { title: "Buyers Closing Disclosure", status: 'needs-review' },
+    { title: "Buyers Final Walkthrough", status: 'done' },
+    { title: "Brokers Commission Request", status: 'in-progress' },
+    { title: "Brokers Deposit", status: 'needs-review' },
+    { title: "Brokers Check", status: 'done' },
+    { title: "Agents Check", status: 'in-progress' },
   ];
 
   checklist = [

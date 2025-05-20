@@ -33,16 +33,32 @@
                 <mat-list-item *ngFor="let folder of folders" class="folder" [ngClass]="folder.status">
                     <mat-icon matListIcon>folder</mat-icon>
                     <span>{{ folder.title }}</span>
-                    <div class="folder-overlay">
-                        <button mat-icon-button color="primary" aria-label="Upload">
-                            <mat-icon>upload</mat-icon>
-                        </button>
-                        <button mat-icon-button color="accent" aria-label="View">
-                            <mat-icon>visibility</mat-icon>
-                        </button>
-                    </div>
+                    <button mat-icon-button [matMenuTriggerFor]="folderMenu" class="folder-menu-btn"
+                        aria-label="More options">
+                        <mat-icon>more_vert</mat-icon>
+                    </button>
                 </mat-list-item>
             </mat-list>
+
+            <mat-menu #folderMenu="matMenu">
+                <button mat-menu-item>
+                    <mat-icon>upload</mat-icon>
+                    <span>Upload</span>
+                </button>
+                <button mat-menu-item>
+                    <mat-icon color="primary">visibility</mat-icon>
+                    <span>View</span>
+                </button>
+                <button mat-menu-item>
+                    <mat-icon class="green-icon">check_circle</mat-icon>
+                    <span>Approve</span>
+                </button>
+                <button mat-menu-item>
+                    <mat-icon color="warn">report_problem</mat-icon>
+                    <span>Alert</span>
+                </button>
+            </mat-menu>
+
         </mat-card>
         <mat-card class="card-bottom">
             <h3>Checklist</h3>
