@@ -6,13 +6,33 @@
         <mat-icon matPrefix>search</mat-icon>
         <input type="text" placeholder="Search" aria-label="Search" matInput [formControl]="searchControl"
             [matAutocomplete]="auto">
-
         <mat-autocomplete #auto="matAutocomplete">
             <mat-option *ngFor="let client of filteredOptions | async" [value]="client">
                 {{ client }}
             </mat-option>
         </mat-autocomplete>
     </mat-form-field>
+    <div class="meta-data-panel-horizontal">
+        <div class="meta-field">
+            <span class="meta-label">Created:</span>
+            <span class="meta-value">{{ creationDate | date:'mediumDate' }}</span>
+        </div>
+        <span class="meta-separator">|</span>
+        <div class="meta-field">
+            <span class="meta-label">Modified:</span>
+            <span class="meta-value">{{ modificationDate | date:'mediumDate' }}</span>
+        </div>
+        <span class="meta-separator">|</span>
+        <div class="meta-field">
+            <span class="meta-label">Status:</span>
+            <span class="meta-value">{{ status }}</span>
+        </div>
+        <span class="meta-separator">|</span>
+        <div class="meta-field">
+            <span class="meta-label">Placeholder:</span>
+            <span class="meta-value">Placeholder</span>
+        </div>
+    </div>
     <button mat-icon-button class="icon-display">
         <mat-icon>logout</mat-icon>
     </button>

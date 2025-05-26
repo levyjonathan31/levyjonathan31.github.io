@@ -1,0 +1,8 @@
+<div class="checklist-scroll">
+    <mat-selection-list>
+        <mat-list-option *ngFor="let task of checklist; let i = index" [(selected)]="task.completed" color="primary">
+            <span class="task-sequence">{{ i + 1 }}.</span>
+            {{ task.label }}
+        </mat-list-option>
+    </mat-selection-list>
+</div>

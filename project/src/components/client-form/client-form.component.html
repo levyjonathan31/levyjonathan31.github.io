@@ -1,0 +1,15 @@
+<form class="form-grid">
+    <ng-container *ngFor="let field of fields">
+        <mat-form-field appearance="fill" subscriptSizing="dynamic">
+            <mat-label>{{ field.label }}</mat-label>
+            <input *ngIf="field.type === 'text' || field.type === 'email'" matInput [type]="field.type">
+            <mat-select *ngIf="field.type === 'select'" [placeholder]="field.label">
+                <ng-container *ngFor="let option of field.options">
+                    <mat-option [value]="option.value !== undefined ? option.value : option">
+                        {{ option.label !== undefined ? option.label : option }}
+                    </mat-option>
+                </ng-container>
+            </mat-select>
+        </mat-form-field>
+    </ng-container>
+</form>

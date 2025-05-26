@@ -24,8 +24,11 @@ import { map, Observable, startWith } from 'rxjs';
 })
 export class NavigationHeaderComponent implements OnInit {
   searchControl = new FormControl('');
-  options: string[] = ['Yeffry Bad', 'Yeffry Good', 'He goood'];
+  options: string[] = ['John Doe', 'Mary Jane', 'Chris Bloodsworth'];
   filteredOptions!: Observable<string[]>;
+  creationDate = new Date(2024, 4, 1);
+  modificationDate = new Date();
+  status = 'Active';
 
   ngOnInit() {
     this.filteredOptions = this.searchControl.valueChanges.pipe(
@@ -39,4 +42,5 @@ export class NavigationHeaderComponent implements OnInit {
 
     return this.options.filter(option => option.toLowerCase().includes(filterValue));
   }
+
 }

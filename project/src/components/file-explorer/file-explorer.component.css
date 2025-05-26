@@ -1,0 +1,73 @@
+.folder-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin: 0 12px;
+}
+
+
+.folder {
+    border: 2px solid #bdbdbd;
+    background: none;
+}
+
+
+.folder span {
+    margin: 0 0 0 24px;
+    font-size: 0.68em;
+    color: #444;
+    font-weight: 500;
+    white-space: normal;
+    word-break: normal;
+    line-height: 1.15;
+    max-width: 120px;
+    display: inline-block;
+    text-align: left;
+}
+
+
+mat-icon[matListIcon] {
+    color: #ffcc00;
+    scale: 1.2;
+    position: absolute;
+    top: 8px;
+    left: 8px
+}
+
+.folder-menu-btn {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    z-index: 3;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+
+.folder-menu-btn:hover {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+}
+
+.done {
+    background-color: rgba(124, 252, 0, 0.5);
+}
+
+.in-progress {
+    background-color: rgba(255, 255, 0, 0.5);
+}
+
+.needs-review {
+    background-color: rgba(240, 128, 128, 0.5);
+}
+
+mat-icon.green-icon {
+    color: #4caf50;
+}
