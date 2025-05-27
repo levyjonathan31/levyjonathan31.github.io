@@ -1,0 +1,10 @@
+<mat-form-field appearance="fill" class="search-bar middle" subscriptSizing="dynamic">
+    <mat-icon matPrefix>search</mat-icon>
+    <input type="text" placeholder="Search" aria-label="Search" matInput [formControl]="searchControl"
+        [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let client of filteredOptions | async" [value]="client">
+            {{ client }}
+        </mat-option>
+    </mat-autocomplete>
+</mat-form-field>

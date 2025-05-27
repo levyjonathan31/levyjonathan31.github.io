@@ -1,0 +1,27 @@
+.meta-data-panel-horizontal {
+    flex: 4;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f5f5f5;
+    border-radius: 6px;
+    font-size: 0.95em;
+    padding: 0 16px;
+    margin: 0 16px;
+}
+
+.meta-field {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    margin: 2px 0;
+}
+
+.meta-label {
+    font-weight: 600;
+    color: #666;
+}
+
+.meta-value {
+    color: #222;
+}

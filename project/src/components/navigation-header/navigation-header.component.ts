@@ -1,46 +1,39 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common'; // Import CommonModule for async pipe
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
+
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { map, Observable, startWith } from 'rxjs';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-navigation-header',
   imports: [
     CommonModule, // Add CommonModule for async pipe
-    MatFormFieldModule,
-    MatInputModule,
     MatIconModule,
     MatButtonModule,
-    MatAutocompleteModule,
-    ReactiveFormsModule // Import ReactiveFormsModule for FormControl
+
   ],
   templateUrl: './navigation-header.component.html',
-  styleUrl: './navigation-header.component.css'
+  styleUrl: './navigation-header.component.css',
+  animations: [
+    trigger('slideInOut', [
+      state('in', style({ width: '*', opacity: 1, marginLeft: '12px' })),
+      state('out', style({ width: '0px', opacity: 0, marginLeft: '0' })),
+      transition('out => in', [
+        style({ width: '0px', opacity: 0, marginLeft: '0' }),
+        animate('200ms ease-out', style({ width: '*', opacity: 1, marginLeft: '12px' }))
+      ]),
+      transition('in => out', [
+        animate('150ms ease-in', style({ width: '0px', opacity: 0, marginLeft: '0' }))
+      ]),
+    ])
+  ]
 })
-export class NavigationHeaderComponent implements OnInit {
-  searchControl = new FormControl('');
-  options: string[] = ['John Doe', 'Mary Jane', 'Chris Bloodsworth'];
-  filteredOptions!: Observable<string[]>;
-  creationDate = new Date(2024, 4, 1);
-  modificationDate = new Date();
-  status = 'Active';
+export class NavigationHeaderComponent {
+  searchOpen = false;
 
-  ngOnInit() {
-    this.filteredOptions = this.searchControl.valueChanges.pipe(
-      startWith(''),
-      map(value => this._filter(value || '')),
-    );
+  toggleSearch() {
+    this.searchOpen = !this.searchOpen;
   }
-
-  private _filter(value: string): string[] {
-    const filterValue = value.toLowerCase();
-
-    return this.options.filter(option => option.toLowerCase().includes(filterValue));
-  }
-
 }
