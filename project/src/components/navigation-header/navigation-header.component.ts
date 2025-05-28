@@ -1,39 +1,42 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common'; // Import CommonModule for async pipe
 
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { trigger, state, style, transition, animate } from '@angular/animations';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+
+import { RecordMetaDataComponent } from './record-meta-data/record-meta-data.component';
+import { ClientFormComponent } from './client-form/client-form.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 
 @Component({
   selector: 'app-navigation-header',
   imports: [
-    CommonModule, // Add CommonModule for async pipe
+    CommonModule,
     MatIconModule,
     MatButtonModule,
-    SearchBarComponent
+    SearchBarComponent,
+    MatTooltipModule,
+    MatDialogModule,
   ],
   templateUrl: './navigation-header.component.html',
   styleUrl: './navigation-header.component.css',
-  animations: [
-    trigger('slideInOut', [
-      state('in', style({ width: '*', opacity: 1, marginLeft: '12px' })),
-      state('out', style({ width: '0px', opacity: 0, marginLeft: '0' })),
-      transition('out => in', [
-        style({ width: '0px', opacity: 0, marginLeft: '0' }),
-        animate('2000ms ease-out', style({ width: '*', opacity: 1, marginLeft: '12px' }))
-      ]),
-      transition('in => out', [
-        animate('1500ms ease-in', style({ width: '0px', opacity: 0, marginLeft: '0' }))
-      ]),
-    ])
-  ]
+
 })
 export class NavigationHeaderComponent {
-  searchOpen = false;
+  constructor(private dialog: MatDialog) { }
 
-  toggleSearch() {
-    this.searchOpen = !this.searchOpen;
+  openMetaDataDialog() {
+    this.dialog.open(RecordMetaDataComponent, {
+      data: {}
+    });
+  }
+  openAddClientDialog() {
+    this.dialog.open(ClientFormComponent, {
+      data: {},
+      disableClose: true
+
+    });
   }
 }

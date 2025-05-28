@@ -1,11 +1,15 @@
 <div class="pill-container">
-    <button mat-icon-button class="icon-display">
+    <button mat-icon-button class="icon-display" matTooltip="Home">
         <mat-icon>home</mat-icon>
     </button>
+    <button mat-icon-button class="icon-display" matTooltip="Add New Client" (click)="openAddClientDialog()">
+        <mat-icon>add</mat-icon>
+    </button>
     <app-search-bar></app-search-bar>
-    <button mat-icon-button class="icon-display">
+    <button mat-icon-button class="icon-display" matTooltip="Logout">
         <mat-icon>logout</mat-icon>
     </button>
-    <button mat-icon-button class="icon-display">
+    <button mat-icon-button class="icon-display" matTooltip="Info" (click)="openMetaDataDialog()">
         <mat-icon>info_outline</mat-icon>
     </button>
+</div>

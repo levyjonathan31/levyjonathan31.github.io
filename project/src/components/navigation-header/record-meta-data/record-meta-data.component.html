@@ -1,21 +1,20 @@
-<div class="meta-data-panel-horizontal">
-    <div class="meta-field">
-        <span class="meta-label">Created:</span>
-        <span class="meta-value">{{ creationDate | date:'mediumDate' }}</span>
-    </div>
-    <span class="meta-separator">|</span>
-    <div class="meta-field">
-        <span class="meta-label">Modified:</span>
-        <span class="meta-value">{{ modificationDate | date:'mediumDate' }}</span>
-    </div>
-    <span class="meta-separator">|</span>
-    <div class="meta-field">
-        <span class="meta-label">Status:</span>
-        <span class="meta-value">{{ status }}</span>
-    </div>
-    <span class="meta-separator">|</span>
-    <div class="meta-field">
-        <span class="meta-label">Placeholder:</span>
-        <span class="meta-value">Placeholder</span>
-    </div>
-</div>
+<mat-card>
+    <table class="meta-table">
+        <thead>
+            <tr>
+                <th>Date Created</th>
+                <th>Date Modified</th>
+                <th>Status</th>
+                <th>Placeholder</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ creationDate | date:'mediumDate' }}</td>
+                <td>{{ modificationDate | date:'mediumDate' }}</td>
+                <td>{{ status }}</td>
+                <td>Placeholder</td>
+            </tr>
+        </tbody>
+    </table>
+</mat-card>

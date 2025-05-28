@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
 import { MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { CommonModule } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDialogRef } from '@angular/material/dialog';
+
 @Component({
   selector: 'app-client-form',
   imports: [
@@ -11,6 +15,7 @@ import { CommonModule } from '@angular/common';
     MatOptionModule,
     MatSelectModule,
     MatFormFieldModule,
+    MatIconModule,
     MatInputModule,
   ],
   templateUrl: './client-form.component.html',
@@ -79,4 +84,9 @@ export class ClientFormComponent {
       ]
     }
   ];
+
+  constructor(private dialogRef: MatDialogRef<ClientFormComponent>) { }
+  onClose() {
+    this.dialogRef.close();
+  }
 }
