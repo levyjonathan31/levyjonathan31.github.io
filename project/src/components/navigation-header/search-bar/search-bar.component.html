@@ -2,6 +2,10 @@
     <mat-icon matPrefix>search</mat-icon>
     <input type="text" placeholder="Search" aria-label="Search" matInput [formControl]="searchControl"
         [matAutocomplete]="auto">
+    <button mat-icon-button matSuffix (click)="onFireClick()" aria-label="Fire" class="fire-btn"
+        [class.active]="fireActive" type="button">
+        <mat-icon [ngClass]="{'fire-active': fireActive}">whatshot</mat-icon>
+    </button>
     <mat-autocomplete #auto="matAutocomplete">
         <mat-option *ngFor="let client of filteredOptions | async" [value]="client">
             {{ client }}

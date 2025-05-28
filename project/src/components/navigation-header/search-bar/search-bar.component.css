@@ -4,3 +4,25 @@
     background-color: #f0f0f0;
     border-radius: 5px;
 }
+
+.fire-btn {
+    border: none;
+    background: none;
+    box-shadow: none;
+    outline: none;
+    padding: 0 10px;
+}
+
+.fire-btn.active .mat-icon,
+.fire-active {
+    color: rgb(254, 133, 11) !important;
+}
+
+.fire-btn .mat-icon:hover:not(.fire-active) {
+    color: rgb(255, 200, 120) !important;
+    /* Lighter orange for hover */
+}
+
+.mat-icon {
+    scale: 1.25;
+}

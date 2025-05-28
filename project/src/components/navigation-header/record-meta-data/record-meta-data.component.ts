@@ -7,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './record-meta-data.component.css'
 })
 export class RecordMetaDataComponent {
-
+  creationDate = new Date(2024, 4, 1);
+  modificationDate = new Date();
+  status = 'Active';
 }

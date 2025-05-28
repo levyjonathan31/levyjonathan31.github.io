@@ -2,15 +2,10 @@
     <button mat-icon-button class="icon-display">
         <mat-icon>home</mat-icon>
     </button>
+    <app-search-bar></app-search-bar>
     <button mat-icon-button class="icon-display">
-        <mat-icon>search</mat-icon>
+        <mat-icon>logout</mat-icon>
     </button>
-    <div *ngIf="searchOpen" [@slideInOut]="searchOpen ? 'in' : 'out'" class="search-anim-wrapper">
-        <app-search-bar></app-search-bar>
-        <button mat-icon-button class="icon-display">
-            <mat-icon>logout</mat-icon>
-        </button>
-        <button mat-icon-button class="icon-display">
-            <mat-icon>info_outline</mat-icon>
-        </button>
-    </div>
+    <button mat-icon-button class="icon-display">
+        <mat-icon>info_outline</mat-icon>
+    </button>

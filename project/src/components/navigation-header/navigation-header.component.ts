@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common'; // Import CommonModule for async
 
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { map, Observable, startWith } from 'rxjs';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { SearchBarComponent } from './search-bar/search-bar.component';
 
 @Component({
   selector: 'app-navigation-header',
@@ -12,7 +12,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
     CommonModule, // Add CommonModule for async pipe
     MatIconModule,
     MatButtonModule,
-
+    SearchBarComponent
   ],
   templateUrl: './navigation-header.component.html',
   styleUrl: './navigation-header.component.css',
@@ -22,10 +22,10 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
       state('out', style({ width: '0px', opacity: 0, marginLeft: '0' })),
       transition('out => in', [
         style({ width: '0px', opacity: 0, marginLeft: '0' }),
-        animate('200ms ease-out', style({ width: '*', opacity: 1, marginLeft: '12px' }))
+        animate('2000ms ease-out', style({ width: '*', opacity: 1, marginLeft: '12px' }))
       ]),
       transition('in => out', [
-        animate('150ms ease-in', style({ width: '0px', opacity: 0, marginLeft: '0' }))
+        animate('1500ms ease-in', style({ width: '0px', opacity: 0, marginLeft: '0' }))
       ]),
     ])
   ]
