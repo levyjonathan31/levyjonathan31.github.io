@@ -1,0 +1,17 @@
+<div class="feed-container">
+    <div class="feed-track">
+        <div class="feed-card" *ngFor="let client of visibleClients; let i = index" [ngClass]="{
+        'center': i === 1,
+        'left': i === 0,
+        'right': i === 2
+      }">
+            <app-client-information [isCenter]="i === 1"></app-client-information>
+        </div>
+    </div>
+    <button mat-icon-button class="nav left" (click)="prev()" aria-label="Previous">
+        <mat-icon>chevron_left</mat-icon>
+    </button>
+    <button mat-icon-button class="nav right" (click)="next()" aria-label="Next">
+        <mat-icon>chevron_right</mat-icon>
+    </button>
+</div>
