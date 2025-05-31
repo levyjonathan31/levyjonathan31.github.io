@@ -15,7 +15,7 @@ import { MatCardModule } from '@angular/material/card';
 export class ClientInformationComponent {
 
   @Input() isCenter = true;
-    @Input() showSelect = false; // <-- new input
+  @Input() showSelect = false; 
 
   @Input() client: any[] = [];
   @Output() clientSelected = new EventEmitter<any>();

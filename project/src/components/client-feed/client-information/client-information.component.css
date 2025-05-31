@@ -52,8 +52,8 @@ h2 {
 .info-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 8px;
-    margin-bottom: 16px;
+    gap: 16px 8px;
+    margin-bottom: 56px;
 }
 
 .info-field {
@@ -103,3 +103,4 @@ app-client-comments {
     transform: translateY(-2px) scale(1.04);
     box-shadow: 0 4px 16px rgba(100, 100, 100, 0.16);
 }
+
