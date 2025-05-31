@@ -1,27 +1,30 @@
-<mat-list class="folder-grid">
-    <mat-list-item *ngFor="let folder of folders" class="folder" [ngClass]="folder.status">
-        <mat-icon matListIcon>folder</mat-icon>
-        <span>{{ folder.title }}</span>
-        <button mat-icon-button [matMenuTriggerFor]="folderMenu" class="folder-menu-btn" aria-label="More options">
-            <mat-icon>more_vert</mat-icon>
+<div class ="file-explorer">
+    <h2>File Explorer</h2>
+    <mat-list class="folder-grid">
+        <mat-list-item *ngFor="let folder of folders" class="folder" [ngClass]="folder.status">
+            <mat-icon matListIcon>folder</mat-icon>
+            <span>{{ folder.title }}</span>
+            <button mat-icon-button [matMenuTriggerFor]="folderMenu" class="folder-menu-btn" aria-label="More options">
+                <mat-icon>more_vert</mat-icon>
+            </button>
+        </mat-list-item>
+    </mat-list>
+    <mat-menu #folderMenu="matMenu">
+        <button mat-menu-item>
+            <mat-icon>upload</mat-icon>
+            <span>Upload</span>
         </button>
-    </mat-list-item>
-</mat-list>
-<mat-menu #folderMenu="matMenu">
-    <button mat-menu-item>
-        <mat-icon>upload</mat-icon>
-        <span>Upload</span>
-    </button>
-    <button mat-menu-item>
-        <mat-icon color="primary">visibility</mat-icon>
-        <span>View</span>
-    </button>
-    <button mat-menu-item>
-        <mat-icon class="green-icon">check_circle</mat-icon>
-        <span>Approve</span>
-    </button>
-    <button mat-menu-item>
-        <mat-icon color="warn">report_problem</mat-icon>
-        <span>Alert</span>
-    </button>
-</mat-menu>
+        <button mat-menu-item>
+            <mat-icon color="primary">visibility</mat-icon>
+            <span>View</span>
+        </button>
+        <button mat-menu-item>
+            <mat-icon class="green-icon">check_circle</mat-icon>
+            <span>Approve</span>
+        </button>
+        <button mat-menu-item>
+            <mat-icon color="warn">report_problem</mat-icon>
+            <span>Alert</span>
+        </button>
+    </mat-menu>
+</div>

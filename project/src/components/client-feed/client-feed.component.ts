@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ClientInformationComponent } from './client-information/client-information.component';
 import { MatIcon } from '@angular/material/icon';
@@ -10,6 +10,8 @@ import { MatIcon } from '@angular/material/icon';
 })
 export class ClientFeedComponent {
   centerIndex = 0;
+  @Output() clientSelected = new EventEmitter<any>();
+
   clients = [
     [
       { label: 'Contact 1 Full Name', value: 'Jane Smith' },
@@ -113,5 +115,9 @@ export class ClientFeedComponent {
 
   next() {
     this.centerIndex = (this.centerIndex + 1) % this.clients.length;
+  }
+
+  selectClient(client: any) {
+    this.clientSelected.emit(client);
   }
 }

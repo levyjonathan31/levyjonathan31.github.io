@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ClientCommentsComponent } from './client-comments/client-comments.component';
 import { MatCardModule } from '@angular/material/card';
@@ -14,13 +14,14 @@ import { MatCardModule } from '@angular/material/card';
 })
 export class ClientInformationComponent {
 
-  @Input() isCenter = false;
-  @Input() fields: any[] = [];
+  @Input() isCenter = true;
+  @Input() client: any[] = [];
+  @Output() clientSelected = new EventEmitter<any>();
 
 
 
   onSelect() {
-    // Your logic here, e.g., emit an event or call a service
     console.log('Client selected!');
+    this.clientSelected.emit(this.client);
   }
 }

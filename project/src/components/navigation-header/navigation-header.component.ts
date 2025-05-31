@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common'; // Import CommonModule for async pipe
 
 import { MatIconModule } from '@angular/material/icon';
@@ -25,8 +25,13 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 
 })
 export class NavigationHeaderComponent {
-  constructor(private dialog: MatDialog) { }
+  constructor(private readonly dialog: MatDialog) { }
+  
+  @Output() homeClicked = new EventEmitter<void>();
 
+  onHomeClick() {
+    this.homeClicked.emit();
+  }
   openMetaDataDialog() {
     this.dialog.open(RecordMetaDataComponent, {
       data: {}

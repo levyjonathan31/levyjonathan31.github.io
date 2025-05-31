@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatFormField, MatLabel } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
 
@@ -9,5 +9,8 @@ import { MatInput } from '@angular/material/input';
   styleUrl: './client-comments.component.css'
 })
 export class ClientCommentsComponent {
+  @Input() comments: string = '';
+  @Input() disabled: boolean = true;
+
 
 }

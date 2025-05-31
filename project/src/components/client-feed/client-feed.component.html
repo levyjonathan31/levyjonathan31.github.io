@@ -5,8 +5,12 @@
         'left': i === 0,
         'right': i === 2
       }">
-<app-client-information [fields]="client" [isCenter]="i === 1"></app-client-information>        </div>
-    </div>
+            <app-client-information
+            [client]="client"
+            [isCenter]="i === 1"
+            (clientSelected)="selectClient(client)">
+            </app-client-information>    
+        </div>
     <button mat-icon-button class="nav left" (click)="prev()" aria-label="Previous">
         <mat-icon>chevron_left</mat-icon>
     </button>

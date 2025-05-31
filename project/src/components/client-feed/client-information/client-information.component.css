@@ -10,11 +10,18 @@ h2 {
     font-weight: 600;
 }
 
+/* Shared card container styles */
+.card-container-hot,
 .card-container-cold {
     display: flex;
     height: 100%;
     gap: 24px;
-    margin: 15px;
+    margin: 16px;
+    border-radius: 18px;
+}
+
+/* Unique backgrounds and shadows */
+.card-container-cold {
     background: #7fd6f6;
     box-shadow:
         0 0 0 4px #4fc3f7,
@@ -25,14 +32,7 @@ h2 {
 }
 
 .card-container-hot {
-    display: flex;
-    height: 100%;
-    gap: 24px;
-    margin: 15px;
     background: #ffc061;
-    /* Deeper, richer orange */
-    /* Warm orange background */
-    border-radius: 18px;
     box-shadow:
         0 0 0 4px #faae3d,
         0 0 12px 8px #ffb74dcc,
@@ -82,12 +82,24 @@ app-client-comments {
 }
 
 .select-btn {
-    background-color: #603FB0;
-    color: white;
-    border-radius: 4px;
-    padding: 8px 16px;
-    margin: 8px 48px;
-    font-weight: 600;
-    transition: background-color 0.3s, transform 0.2s;
+    background: #43a047; /* vibrant green */
+    color: #fff;
+    border-radius: 8px;
+    padding: 10px 32px;
+    margin: 8px auto 8px auto; /* reduced top margin from 16px to 8px */
+    font-weight: 700;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 8px rgba(100, 100, 100, 0.10);
+    border: none;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
     display: block;
+    letter-spacing: 0.5px;
+}
+
+.select-btn:hover,
+.select-btn:focus {
+    background: #388e3c; /* deeper green for hover */
+    color: #fff;
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 4px 16px rgba(100, 100, 100, 0.16);
 }

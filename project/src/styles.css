@@ -4,14 +4,13 @@ app-root {
     height: 100%;
     display: flex;
     flex-direction: column;
-    background-color: lightsteelblue;
+    background-color: #f4f4f7; /* soft, light gray */
 }
 
 
 h1,
 h2,
 h3 {
-    text-align: left;
-    margin: 4px 8px;
-    color: #603FB0;
+    text-align: center;
+    color: #444452;
 }

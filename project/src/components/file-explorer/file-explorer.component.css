@@ -5,6 +5,17 @@
     margin: 0 12px;
 }
 
+.file-explorer {
+    background: #e3e7ee;
+    border-radius: 18px;
+    border: 2.5px solid #b0b7c3;
+    box-shadow:
+        0 0 0 4px #d1d7e3,
+        0 4px 24px 0 rgba(44, 62, 80, 0.10),
+        0 1.5px 6px 0 rgba(44, 62, 80, 0.08);
+    padding: 8px;
+    color: #23272f;
+}
 
 .folder {
     border: 2px solid #bdbdbd;

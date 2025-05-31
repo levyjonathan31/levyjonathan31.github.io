@@ -1,13 +1,16 @@
-<app-navigation-header></app-navigation-header>
-<app-client-feed></app-client-feed>
-<!--     
-<div class="column">
-        <mat-card class="card-top">
-            <h3>File Explorer</h3>
-            <app-file-explorer></app-file-explorer>
-        </mat-card>
-        <mat-card class="card-bottom">
-            <h3>Checklist</h3>
-            <app-client-checklist></app-client-checklist>
-        </mat-card>
-    </div> -->
+<app-navigation-header (homeClicked)="deselectClient()"></app-navigation-header><!-- Show client feed if no client is selected -->
+<ng-container *ngIf="!selectedClient">
+  <app-client-feed (clientSelected)="onClientSelected($event)"></app-client-feed>
+</ng-container>
+
+<!-- Show client details and right column if a client is selected -->
+<div *ngIf="selectedClient" class="client-details-layout">
+  <div class="left-column">
+    <!-- You can use a custom component or just display info here -->
+    <app-client-information [client]="selectedClient"></app-client-information>
+  </div>
+  <div class="right-column">
+      <app-file-explorer></app-file-explorer>
+      <app-client-checklist></app-client-checklist>
+  </div>
+</div>

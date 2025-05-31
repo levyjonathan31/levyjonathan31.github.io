@@ -1,15 +1,16 @@
+
 <mat-card class="card-container-hot">
     <div class="client-info">
         <h2>
-            {{ fields[0]?.value }}
+            {{ client[0]?.value }}
         </h2>
         <div class="info-grid">
-            <div class="info-field" *ngFor="let field of fields">
+            <div class="info-field" *ngFor="let field of client">
                 <div class="info-label">{{ field.label }}</div>
                 <div class="info-value">{{ field.value }}</div>
             </div>
         </div>
-        <app-client-comments></app-client-comments>
+        <app-client-comments [disabled]="!isCenter"></app-client-comments>
         <button mat-flat-button color="primary" class="select-btn" (click)="onSelect()" *ngIf="isCenter">
             Select
         </button>
