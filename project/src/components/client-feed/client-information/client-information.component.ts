@@ -15,19 +15,9 @@ import { MatCardModule } from '@angular/material/card';
 export class ClientInformationComponent {
 
   @Input() isCenter = false;
+  @Input() fields: any[] = [];
 
-  fields = [
-    { label: 'Contact 1 Full Name', value: 'Jane Smith' },
-    { label: 'Contact 2 Full Name', value: 'John Smith' },
-    { label: 'Email Address', value: 'jane.smith@example.com' },
-    { label: 'Phone Number', value: '(555) 123-4567' },
-    { label: 'Property Control Number', value: 'PCN-00123' },
-    { label: 'Status', value: 'Qualified' },
-    { label: 'Lead Source', value: 'Referral' },
-    { label: 'Income Type', value: 'W-2' },
-    { label: 'Credit Score Range', value: 'High' },
-    { label: 'Background Check', value: 'Excellent' }
-  ];
+
 
   onSelect() {
     // Your logic here, e.g., emit an event or call a service

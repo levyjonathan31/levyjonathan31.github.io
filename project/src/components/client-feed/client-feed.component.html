@@ -5,8 +5,7 @@
         'left': i === 0,
         'right': i === 2
       }">
-            <app-client-information [isCenter]="i === 1"></app-client-information>
-        </div>
+<app-client-information [fields]="client" [isCenter]="i === 1"></app-client-information>        </div>
     </div>
     <button mat-icon-button class="nav left" (click)="prev()" aria-label="Previous">
         <mat-icon>chevron_left</mat-icon>
