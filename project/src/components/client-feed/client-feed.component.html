@@ -1,20 +1,27 @@
 <div class="feed-container">
-    <div class="feed-track">
-        <div class="feed-card" *ngFor="let client of visibleClients; let i = index" [ngClass]="{
+  <div class="feed-track">
+    <div
+      class="feed-card"
+      *ngFor="let client of visibleClients; let i = index"
+      [ngClass]="{
         'center': i === 1,
         'left': i === 0,
         'right': i === 2
-      }">
-            <app-client-information
-            [client]="client"
-            [isCenter]="i === 1"
-            (clientSelected)="selectClient(client)">
-            </app-client-information>    
-        </div>
-    <button mat-icon-button class="nav left" (click)="prev()" aria-label="Previous">
-        <mat-icon>chevron_left</mat-icon>
-    </button>
-    <button mat-icon-button class="nav right" (click)="next()" aria-label="Next">
-        <mat-icon>chevron_right</mat-icon>
-    </button>
+      }"
+    >
+      <app-client-information
+        [client]="client"
+        [isCenter]="i === 1"
+        [showSelect]="true"
+        (clientSelected)="selectClient(client)"
+      ></app-client-information>
+    </div>
+  </div>
+  <!-- Move these buttons OUTSIDE the *ngFor loop! -->
+  <button mat-icon-button class="nav left" (click)="prev()" aria-label="Previous">
+    <mat-icon>chevron_left</mat-icon>
+  </button>
+  <button mat-icon-button class="nav right" (click)="next()" aria-label="Next">
+    <mat-icon>chevron_right</mat-icon>
+  </button>
 </div>

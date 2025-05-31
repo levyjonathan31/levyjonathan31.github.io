@@ -11,7 +11,7 @@
             </div>
         </div>
         <app-client-comments [disabled]="!isCenter"></app-client-comments>
-        <button mat-flat-button color="primary" class="select-btn" (click)="onSelect()" *ngIf="isCenter">
+        <button mat-flat-button color="primary" class="select-btn" (click)="onSelect()" *ngIf="showSelect">
             Select
         </button>
     </div>

@@ -7,7 +7,10 @@
 <div *ngIf="selectedClient" class="client-details-layout">
   <div class="left-column">
     <!-- You can use a custom component or just display info here -->
-    <app-client-information [client]="selectedClient"></app-client-information>
+    <app-client-information 
+    [client]="selectedClient"
+    [showSelect]="false"
+    ></app-client-information>
   </div>
   <div class="right-column">
       <app-file-explorer></app-file-explorer>
